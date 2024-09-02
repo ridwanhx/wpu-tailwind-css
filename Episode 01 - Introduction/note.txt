@@ -1,0 +1,74 @@
+<!-- Tailwind CSS - introduction -->
+
+<!-- Definisi -->
+Merupakan sebuah utility-first framework yang didalamnya terdapat banyak kelas
+yang bisa digunakan.
+
+<!-- Kelas utility / utility class -->
+Kelas yang fungsinya untuk melakukan persis 1 hal saja
+<!-- misal -->
+kelas mx-auto : biasanya akan memberikan margin pada sumbu x sebesar auto
+
+<!-- Utility first -->
+hanya berisikan utility-utility saja, tidak melibatkan komponen, tidak ada satu
+kelas yang didalamnya ada banyak css.
+
+<!-- Sejarah -->
+Dibuat oleh Adam Wathan (1 Nov 2017)
+
+<!-- Contoh beberapa utility yang bisa digunakan -->
+preflight : css reset / melakukan reset property-property default yang ada di
+halaman html
+
+<!-- terkait layouting -->
+layout, flexbox, grid
+
+<!-- terkait pengaturan jarak dan ukuran daripada elemen -->
+spacing (margin, padding), sizing (widht, heigt)
+
+<!-- terkait typography -->
+font-serif, font-sans, font-mono, etc..
+
+<!-- terkait bg dan border pada suatu elemen -->
+background, border
+
+<!-- terkait efek tertentu terhadaap suatu elemen -->
+effect, filter
+
+<!-- terkait tingkah laku dan animasi suatu elemen -->
+transition, transform, animation
+
+<!-- Interactivity -->
+<!-- Pseudo classes -->
+hover : menambahkan kondisi pada suatu elemen ketika cursor diarahkan ke elemen
+tersebut. 
+focus, 
+active : menambahkan kondisi aktif pada suatu elemen ketika
+mengklik elemen tersebut. 
+first : memilih elemen pertama. 
+last : memilih elemen
+terakhir
+
+<!-- Pseudo element -->
+before, after, 
+placeholder ( styling placeholder pada input element ), 
+file ( mengatur perilaku untuk element input bertipe file ), 
+selection ( mengatur highlight ketika teks di seleksi ).
+
+<!-- Responsicity -->
+<!-- contoh -->
+<div class="py-6 px-4 sm:p-6 md:py-12 md-px-8 dark:bg-gray-800"></div>
+
+<!-- keterangan -->
+py-6 px-4 : berlaku secara default untuk semua ukuran layar
+
+sm:p-6 : hanya berlaku untuk ukuran layar kategori small, mengatur padding di ke-4 sisinya sebanyak 6
+
+md:py-12 md-px-8 : hanya berlaku untuk ukuran layar kategori small, mengatur padding sumbu y (atas-bawah) nya sebanyak 12, dan sumbu x (kiri-kanan) nya sebanyak 8
+
+dark:bg-gray-800 (*hanya berlaku untuk tailwind) : menambahkan efek dark mode pada elemen.
+
+<!-- Perbedaan dengan bootstrap ? -->
+Bootstrap : merupakan UI framework (yang artinya didalamnya terdapat banyak komponen UI serta utility yang siap pakai)
+
+Tailwind : merupakan utility-first framework (yang secara default tidak mempunyai komponen)

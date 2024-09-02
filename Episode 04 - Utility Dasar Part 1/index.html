@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utility Dasar Bagian 1 | Tailwind CSS</title>
+    <!-- customize font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Menginisiasi cara mengaktifkan auto complete untuk instalasi via CDN -->
+    <!-- load CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- customizing -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ocean: "#03346E",
+            },
+            fontFamily: {
+              poppins: "Poppins",
+            },
+            spacing: {
+              // untuk satuan ukuran yang digunakan oleh tailwind adalah rem
+              // didefinisikan bahwa ukuran terkecilnya adalah sebesar 0.25rem atau 4px (dalam satuan ukuran px)
+              13: "3.25rem",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- menambahkan style buatan sendiri -->
+    <!-- <style type="text/tailwindcss">
+      * {
+        border: 1px solid salmon;
+      }
+    </style> -->
+  </head>
+  <body>
+    <h1 class="font-poppins font-bold my-6 text-4xl text-center text-emerald-700 uppercase">
+      Mari belajar <span class="bg-gradient-to-l from-sky-200 to-blue-600 text-transparent bg-clip-text">tailwind css</span>
+    </h1>
+    <!-- spacing -->
+    <section class="mb-10 bg-slate-200">
+      <h2 class="font-bold text-2xl text-center py-3">Spacing</h2>
+      <div class="m-13 bg-emerald-400">Margin</div>
+      <div class="-ml-4 bg-pink-300">NegativeMargin</div>
+      <div class="py-4 px-2 bg-violet-400">Padding</div>
+    </section>
+
+    <!-- sizing -->
+    <section class="mb-10 bg-emerald-200">
+      <h2 class="font-bold text-2xl text-center py-3">Sizing</h2>
+      <div class="bg-red-600 text-white w-32 h-32">width 32, height 32</div>
+      <div class="max-w-xs bg-blue-500">Max width in xs screen</div>
+      <div class="max-w-sm min-h-screen text-white bg-gradient-to-br from-red-400 via-green-400 to-blue-400">
+        Max width in sm screen, Min height screen
+      </div>
+    </section>
+
+    <section class="mb-96 font-poppins max-w-xl mx-auto">
+      <h2 class="font-bold text-3xl capitalize mb-2">
+        Belajar mengenai typography pada tailwind css
+      </h2>
+      <div class="mb-4 text-lg">By Muhamad Ridwan, 3 September 2024</div>
+      <p class="mb-4 text-base text-justify">
+        Lorem ipsum dolor sit amet
+        <a href="#" class="underline font-semibold italic text-ocean">consectetur</a>
+        adipisicing elit. Quam autem ad impedit quas sapiente. Nam quia nesciunt
+        dolore autem a odio! Voluptatem quidem culpa doloremque.
+      </p>
+      <p class="mb-4 text-base text-justify">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi eaque
+        omnis eligendi quo placeat provident quia recusandae eveniet quidem
+        doloremque, ea numquam
+        <span class="font-semibold italic">voluptatibus</span> aut, deserunt
+        ipsam pariatur animi commodi voluptates aliquid. Facere ea sunt voluptas
+        beatae autem exercitationem, soluta doloremque.
+      </p>
+      <blockquote class="mb-4 text-lg text-right font-light italic">
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae iste
+        harum officiis deserunt."
+      </blockquote>
+      <cite>- Usep Dayat</cite>
+    </section>
+  </body>
+</html>

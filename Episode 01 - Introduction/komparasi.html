@@ -1,0 +1,46 @@
+<!-- KOMPARASI (vanila, bootstrap, tailwind) -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <!-- vanilla css -->
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .tombol {
+      padding: 8px 16px;
+      background-color: rgb(65, 105, 225);
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    .tombol:hover {
+      background-color: rgb(65, 105, 200);
+    }
+  </style>
+
+  <body>
+    <!-- menggunakan vanilla css / css murni -->
+    <!-- untuk styling elemen dilakukan secara manual -->
+    <button type="button" class="tombol">Submit</button>
+
+    <!-- menggunakan bootstrap -->
+    <!-- untuk styling elemen sudah dibuatkan oleh bootstrap, untuk menggunakannya kita hanya perlu memanggil componen / utility class terkait yang dibutuhkan -->
+    <button type="button" class="btn btn-primary">Submit</button>
+
+    <!-- menggunakan tailwind -->
+    <!-- bisa dibilang untuk tailwind ini mengadaptasi keduanya, dimana secara implementasi kita melakukan pemanggilan utility class yang diperlukan yang sudah disiapkan oleh tailwind nya, dan untuk stylingnya bisa disesuaikan lagi terkait stylingnya berdasarkan keinginan -->
+    <button
+      type="button"
+      class="bg-blue-600 text-white rounded py-2 px-3 hover:bg-blue-700"
+    >
+      Submit
+    </button>
+  </body>
+</html>
