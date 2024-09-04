@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preview Episode 05 | Tailwind CSS</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- customizing -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ocean: "#03346E",
+            },
+            fontFamily: {
+              poppins: "Poppins",
+            },
+            spacing: {
+              13: "3.25rem",
+            },
+            height: {
+                50: "12.50rem"
+            }
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <div
+      class="max-w-xl h-80 bg-blue-500 mx-auto bg-no-repeat bg-cover bg-center bg-fixed"
+      style="background-image: url('https://picsum.photos/1000/600')"
+    ></div>
+
+    <section class="max-w-xl mx-auto my-[25px]">
+      <article class="font-poppins">
+        <h2 class="font-bold text-3xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing.
+        </h2>
+        <span class="mt-2 mb-4 block text-base text-gray-600"
+          >By
+          <a href="#" class="text-blue-600 font-semibold">Muhamad Ridwan</a>, 14
+          January 2024</span
+        >
+        <p class="my-4 text-justify text-lg text-gray-600">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea modi nihil
+          quod delectus adipisci vero, dolorem nostrum sint dicta praesentium!
+        </p>
+        <p class="my-4 text-justify text-lg text-gray-600">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum
+          tempore doloremque nesciunt facere ratione eius aspernatur molestias
+          minus cum. Nobis, aspernatur, odit esse voluptates minus placeat
+          recusandae ipsam ex ut, dolorum reiciendis blanditiis! Natus laborum
+          unde culpa repellendus? Id, dolorem?
+        </p>
+        <p class="my-4 text-justify text-lg text-gray-600">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae nemo
+          officiis voluptatibus excepturi. Enim rerum tempore accusantium,
+          quidem itaque fugiat ut! Dicta, necessitatibus error sunt excepturi
+          asperiores natus ipsam nobis.
+        </p>
+        <blockquote>
+          <p class="my-4 text-justify text-lg text-gray-600 italic">
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere a
+            quae ab at numquam laudantium!"
+          </p>
+          <cite class="block font-semibold text-right">- Aristotles</cite>
+        </blockquote>
+      </article>
+    </section>
+
+    <div class="max-w-xl my-[100px] mx-auto h-50 bg-emerald-800 bg-cover bg-no-repeat bg-center bg-fixed" style="background-image: url('https://picsum.photos/id/1/1080/600');">
+        <div class="max-w-full bg-red-500/5 h-full backdrop-blur-sm flex items-center p-5">
+            <span class="text-lg font-semibold text-center text-white drop-shadow-md">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia natus voluptas quod?</span>
+        </div>
+    </div>
+
+    <div class="max-w-xl mx-auto flex justify-evenly">
+      <div
+        class="w-20 h-20 bg-gradient-to-r from-lime-100 to-lime-900 rounded-full shadow-sm"
+      ></div>
+      <div
+        class="w-32 h-20 bg-gradient-to-r from-lime-100 to-lime-900 rounded-full shadow-md"
+      ></div>
+      <div
+        class="w-32 h-20 bg-gradient-to-r from-lime-100 to-lime-900 rounded-s-full shadow-lg hover:blur-sm"
+      ></div>
+      <div
+        class="w-32 h-20 bg-gradient-to-r from-lime-100 to-lime-900 rounded-e-full shadow-xl hover:rotate-90"
+      ></div>
+    </div>
+  </body>
+</html>

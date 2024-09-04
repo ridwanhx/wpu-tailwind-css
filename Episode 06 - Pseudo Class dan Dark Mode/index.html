@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Utility Dasar Bagian 2 | Tailwind CSS</title>
+    <title>Pseudo Class & Dark Mode | Tailwind CSS</title>
     <!-- customize font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -18,9 +18,11 @@
     <script>
       tailwind.config = {
         theme: {
+          darkMode: "class",
           extend: {
             colors: {
               ocean: "#03346E",
+              dark: "#1E293B",
             },
             fontFamily: {
               poppins: "Poppins",
@@ -36,13 +38,13 @@
     </script>
 
     <!-- menambahkan style buatan sendiri -->
-    <!-- <style type="text/tailwindcss">
-      * {
-        border: 1px solid salmon;
+    <style type="text/tailwindcss">
+      #toggle:checked ~ label div.toggle-circle {
+        @apply translate-x-4;
       }
-    </style> -->
+    </style>
   </head>
-  <body>
+  <body class="dark:bg-slate-800 dark:text-slate-200">
     <h1
       class="font-poppins font-bold my-6 text-4xl text-center text-emerald-700 uppercase"
     >
@@ -141,7 +143,7 @@
     <!-- Background size, Background Repeat, Background Position -->
     <div
       class="max-w-xl mb-[200px] h-96 bg-blue-500 mt-12 mx-auto bg-contain bg-no-repeat bg-center"
-      style="background-image: url('./img/1.jpg')"
+      style="background-image: url('https://picsum.photos/1000/600')"
     ></div>
 
     <!-- Border -->
@@ -225,7 +227,7 @@
     <!-- Opacity -->
     <div
       class="w-40 h-40 bg-slate-400 mx-auto border-2 border-slate-600 rounded-lg opacity-75 my-4"
-      style="background: url('./img/1.jpg')"
+      style="background: url('https://picsum.photos/1000/600')"
     ></div>
 
     <!-- Mix Blend Mode -->
@@ -233,28 +235,28 @@
       <!-- Multiply -->
       <div
         class="w-40 h-40 bg-slate-400 mx-auto rounded-lg opacity-75 overflow-hidden"
-        style="background: url('./img/1.jpg')"
+        style="background: url('https://picsum.photos/1000/600')"
       >
         <div class="w-full h-full bg-indigo-600 mix-blend-multiply"></div>
       </div>
       <!-- Screen -->
       <div
         class="w-40 h-40 bg-slate-400 mx-auto rounded-lg opacity-75 overflow-hidden"
-        style="background: url('./img/1.jpg')"
+        style="background: url('https://picsum.photos/1000/600')"
       >
         <div class="w-full h-full bg-indigo-600 mix-blend-screen"></div>
       </div>
       <!-- Overlay -->
       <div
         class="w-40 h-40 bg-slate-400 mx-auto rounded-lg opacity-75 overflow-hidden"
-        style="background: url('./img/1.jpg')"
+        style="background: url('https://picsum.photos/1000/600')"
       >
         <div class="w-full h-full bg-indigo-600 mix-blend-overlay"></div>
       </div>
       <!-- Darken -->
       <div
         class="w-40 h-40 bg-slate-400 mx-auto rounded-lg opacity-75 overflow-hidden"
-        style="background: url('./img/1.jpg')"
+        style="background: url('https://picsum.photos/1000/600')"
       >
         <div class="w-full h-full bg-indigo-600 mix-blend-darken"></div>
       </div>
@@ -264,7 +266,7 @@
     <div class="my-4 flex justify-between">
       <div
         class="w-40 h-40 bg-red-600 mx-auto rounded-lg overflow-hidden bg-blend-darken bg-contain bg-no-repeat"
-        style="background: url('./img/1.jpg')"
+        style="background: url('https://picsum.photos/1000/600')"
       ></div>
     </div>
 
@@ -273,17 +275,17 @@
     <div class="my-4 flex justify-between">
       <div
         class="w-40 h-40 bg-red-600 mx-auto rounded-lg overflow-hidden blur-sm hover:blur-0"
-        style="background: url('./img/1.jpg')"
+        style="background: url('https://picsum.photos/1000/600')"
       ></div>
       <!-- Brightness -->
       <div
         class="w-40 h-40 bg-red-600 mx-auto rounded-lg overflow-hidden brightness-50"
-        style="background: url('./img/1.jpg')"
+        style="background: url('https://picsum.photos/1000/600')"
       ></div>
       <!-- Backdrop Blur -->
       <div
         class="w-40 h-40 bg-red-600 mx-auto rounded-lg overflow-hidden grayscale flex"
-        style="background: url('./img/1.jpg')"
+        style="background: url('https://picsum.photos/1000/600')"
       >
         <div
           class="w-[60px] h-[60px] m-auto bg-white/40 backdrop-blur font-bold flex justify-center items-center"
@@ -292,5 +294,102 @@
         </div>
       </div>
     </div>
+
+    <hr class="my-20" />
+
+    <!-- Episode 06 - Pseudo Class & Dark Mode -->
+    <!-- toggle -->
+     <div class="flex items-center justify-center">
+        <span class="capitalize mr-2">light</span>
+        <input type="checkbox" id="toggle" class="hidden">
+        <label for="toggle">
+            <div class="w-9 h-5 bg-slate-300 rounded-full flex items-center cursor-pointer">
+                <div class="w-5 h-5 bg-slate-600 rounded-full toggle-circle"></div>
+            </div>
+        </label>
+        <span class="capitalize ml-2">dark</span>
+     </div>
+
+    <div class="flex justify-center my-20">
+      <!-- hover -->
+      <button
+        type="button"
+        class="block px-5 py-3 text-white me-2 bg-blue-500 border-0 rounded-full hover:bg-blue-600"
+      >
+        Hover
+      </button>
+
+      <!-- active -->
+      <button
+        type="button"
+        class="block px-5 py-3 text-white me-2 bg-blue-500 border-0 rounded-full active:bg-blue-600 dark:bg-dark dark:border dark:border-slate-200 dark:active:bg-emerald-400 dark:active:text-emerald-950"
+      >
+        Active
+      </button>
+
+      <!-- focus -->
+      <button
+        type="button"
+        class="block px-5 py-3 text-white me-2 bg-blue-500 border-0 rounded-full focus:ring focus:ring-orange-300"
+      >
+        Focus
+      </button>
+    </div>
+
+    <!-- Styling based on parent state -->
+    <!-- Grouping elements -->
+    <div
+      class="max-w-lg border border-slate-200 my-[50px] p-5 shadow-md mx-auto font-serif rounded-md hover:bg-emerald-700 group dark:hover:bg-slate-200"
+    >
+      <h3
+        class="font-bold text-lg capitalize mb-3 text-slate-700 group-hover:text-white dark:text-slate-300 dark:group-hover:text-slate-700"
+      >
+        My title
+      </h3>
+      <!-- Selection -->
+      <!-- mengatur perilaku text ketika di highlight -->
+      <p
+        class="text-slate-600 text-justify group-hover:text-white selection:bg-yellow-400 selection:text-slate-700 first-line:uppercase first-line:tracking-widest first-letter:text-5xl first-letter:float-left first-letter:mr-3 dark:text-slate-300 dark:group-hover:text-slate-700"
+      >
+        <!-- first-line: melakukan manipulasi element text pada baris pertama -->
+        <!-- first-letter: melakukan manipulasi element text pada huruf pertama -->
+        <!-- tracking-widest: mengatur kerenggangan antar karakter -->
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit alias
+        saepe doloribus maxime sit quia, laboriosam minus est nihil illo nisi
+        recusandae magni praesentium adipisci eius dolor facilis blanditiis.
+        Laborum!
+      </p>
+    </div>
+
+    <div
+      class="max-w-lg mx-auto border border-slate-200 p-5 my-[50px] shadow-md rounded-md font-poppins"
+    >
+      <label for="email">
+        <!-- Menambahkan pseudo element after -->
+        <span
+          class="block font-semibold mb-2 text-slate-700 after:content-['*'] after:text-red-600 after:ml-0.5"
+          >Email</span
+        >
+        <!-- menambahkan kelas invalid / nantinya kelas ini akan membantu user ketika format isian belum terpenuhi, maka akan ditampilkan keadaan tertentu kepada user -->
+        <input
+          type="email"
+          id="email"
+          class="block px-4 py-3 border text-sm text-slate-700 w-full rounded-full placeholder:text-slate-400 placeholder:capitalize focus:outline-none focus:ring-1 focus:ring-sky-400 focus:border-sky-400 invalid:text-red-600 invalid:focus:ring-red-600 invalid:focus:border-red-600 peer"
+          placeholder="masukkan email..."
+        />
+        <small class="m-1 text-red-600 invisible peer-invalid:visible"
+          >Email tidak valid</small
+        >
+      </label>
+    </div>
+
+    <script>
+        const checkbox = document.querySelector('#toggle');
+        const html = document.querySelector('html');
+
+        checkbox.addEventListener('click', function() {
+            checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark');
+        })
+    </script>
   </body>
 </html>
