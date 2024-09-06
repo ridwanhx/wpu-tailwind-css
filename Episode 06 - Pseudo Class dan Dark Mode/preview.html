@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preview episode 06 | Tailwind CSS</title>
+    <!-- customize font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Menginisiasi cara mengaktifkan auto complete untuk instalasi via CDN -->
+    <!-- load CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- customizing -->
+    <script>
+      tailwind.config = {
+        theme: {
+          darkMode: "class",
+          extend: {
+            colors: {
+              ocean: "#03346E",
+              dark: "#1E293B",
+            },
+            fontFamily: {
+              poppins: "Poppins",
+              inter: "Inter",
+            },
+            spacing: {
+              13: "3.25rem",
+            },
+            height: {
+              120: "30rem",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- kita sebut saja navbar -->
+    <nav class="max-w-full p-5 pb-5 bg-dark shadow-sm overflow-hidden left-0 right-0 z-10">
+      <div class="flex justify-start items-center mx-6">
+        <div
+          class="mr-5 w-10 h-10 bg-no-repeat bg-contain bg-center"
+          style="background-image: url('./img/mark.svg')"
+        ></div>
+        <ul
+          class="font-inter text-slate-400 drop-shadow-sm text-sm font-normal"
+        >
+          <li
+            class="inline-block mr-2.5 p-2 bg-slate-900 rounded-md text-slate-100"
+          >
+            <a href="">Dashboard</a>
+          </li>
+          <li
+            class="inline-block mr-2.5 p-2 hover:bg-slate-900 rounded-md hover:text-slate-100"
+          >
+            <a href="">Team</a>
+          </li>
+          <li
+            class="inline-block mr-2.5 p-2 hover:bg-slate-900 rounded-md hover:text-slate-100"
+          >
+            <a href="">Projects</a>
+          </li>
+          <li
+            class="inline-block mr-2.5 p-2 hover:bg-slate-900 rounded-md hover:text-slate-100"
+          >
+            <a href="">Calendar</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- kita sebut saja jumbotron -->
+    <div
+      class="w-full h-120 bg-blue-500 bg-cover relative align-middle after:content-[''] after:block after:w-full after:h-4/5 after:bg-gradient-to-t after:from-indigo-900 after:to-transparent after:absolute after:bottom-0"
+      style="background-image: url('https://picsum.photos/id/1/1920/1080')"
+    >
+      <!-- centering element -->
+      <div
+        class="z-10 absolute top-[50%] -translate-y-[50%] text-center left-[50%] -translate-x-[50%]"
+      >
+        <h3 class="font-inter font-light text-slate-100 text-5xl drop-shadow-lg mb-3 tracking-wide">
+          This is our big Tagline!
+        </h3>
+        <span
+          class="font-inter text-slate-100 drop-shadow-lg text-lg font-light tracking-wide"
+          >Here's our small slogan.</span
+        >
+      </div>
+    </div>
+  </body>
+</html>
