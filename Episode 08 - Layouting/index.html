@@ -1,12 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- smooth scrolling effect -->
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Layouting | Tailwind CSS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    <h1 class="font-bold text-3xl text-center bg-gradient-to-tl from-pink-600 to-violet-400 text-transparent bg-clip-text">Layouting Tailwind CSS</h1>
-</body>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          darkMode: "class",
+          extend: {
+            animation: {
+              dyland: "dyland 3.50s ease-in-out infinite",
+              shake: "shake .25s ease-in-out infinite",
+            },
+            // membuat animasi baru
+            keyframes: {
+              dyland: {
+                "0%, 100%": {
+                  "background-color": "rgb(79 70 229)",
+                  color: "transparent",
+                },
+                "50%": {
+                  width: "14rem",
+                  "background-color": "white",
+                  border: "1px solid rgb(79 70 229)",
+                  color: "rgb(79 70 229)",
+                },
+              },
+              shake: {
+                "0%, 100%": {
+                  transform: "rotate(-9deg)",
+                },
+                "50%": {
+                  transform: "rotate(9deg)",
+                },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- Definisi layouting -->
+    <div class="container mx-auto px-[2rem] my-6">
+      <div class="border w-full p-5 rounded-t-lg bg-slate-100">
+        <h3 class="font-bold text-xl text-slate-600">
+          Layouting - Tailwind CSS
+        </h3>
+      </div>
+      <div class="border-t-0 border p-5 rounded-b-lg">
+        <h5 class="text-slate-400 font-bold mb-2">Deskripsi :</h5>
+        <p class="text-slate-400">
+          Merupakan suatu konsep yang mempelajari terkait ketentuan bagaimana
+          tata-letak dari suatu element di posisikan dalam halaman.
+        </p>
+      </div>
+    </div>
+
+    <!-- Container -->
+    <div class="container mx-auto px-[2rem] my-6">
+      <div class="border w-full p-5 rounded-t-lg bg-slate-100">
+        <h3 class="font-bold text-xl text-slate-600">Container</h3>
+      </div>
+      <div class="border-t-0 border p-5 rounded-b-lg">
+        <h5 class="text-slate-400 font-bold mb-2">Deskripsi :</h5>
+        <p class="text-slate-400">
+          Merupakan sebuah utility class yang juga dimiliki oleh tailwind untuk
+          memberikan lebar yang fix untuk suatu elemen. <br />
+          <span class="font-semibold"
+            >Cara kerja dari container versi tailwind ini adalah secara default
+            untuk ukuran dimensi layar < sm / kurang dari ukuran small/sm,
+            secara default lebarnya akan didefinisikan sebanyak 100%, lebih dari
+            itu akan disesuaikan</span
+          >
+        </p>
+      </div>
+    </div>
+
+    <!-- Float -->
+    <div class="container mx-auto px-[2rem] my-6">
+      <div class="border w-full p-5 rounded-t-lg bg-slate-100">
+        <h3 class="font-bold text-xl text-slate-600">Floats</h3>
+      </div>
+      <div class="border-t-0 border p-5 rounded-b-lg">
+        <h5 class="text-slate-400 font-bold mb-2">Deskripsi :</h5>
+        <div
+          class="w-20 h-20 bg-cover bg-no-repeat mr-4 float-start"
+          style="background-image: url('https://picsum.photos/360/360')"
+        ></div>
+        <p class="text-slate-400">
+          Merupakan sebuah utility class dan juga konsep yang berkaitan dengan
+          pengelolaan bungkus daripada suatu konten yang mengelilingi sebuah
+          elemen.
+        </p>
+        <div class="clear-both"></div>
+      </div>
+    </div>
+
+    <!-- Positions -->
+    <div class="container mx-auto px-[2rem] my-6 relative">
+      <div
+        class="absolute left-1/2 -translate-x-1/2 -top-5 w-24 h-10 border bg-indigo-600 rounded-full flex justify-center items-center cursor-pointer text-white animate-dyland overflow-hidden"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="size-5 animate-shake"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.25 9a6.75 6.75 0 0 1 13.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 0 1-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 1 1-7.48 0 24.585 24.585 0 0 1-4.831-1.244.75.75 0 0 1-.298-1.205A8.217 8.217 0 0 0 5.25 9.75V9Zm4.502 8.9a2.25 2.25 0 1 0 4.496 0 25.057 25.057 0 0 1-4.496 0Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        <span class="text-xs block ms-2">new notification!</span>
+      </div>
+      <div class="border w-full p-5 rounded-t-lg bg-slate-100">
+        <h3 class="font-bold text-xl text-slate-600">Positions</h3>
+      </div>
+      <div class="border-t-0 border p-5 rounded-b-lg">
+        <h5 class="text-slate-400 font-bold mb-2">Deskripsi :</h5>
+        <div
+          class="w-20 h-20 bg-cover bg-no-repeat mr-4 float-start"
+          style="background-image: url('https://picsum.photos/360/360')"
+        ></div>
+        <p class="text-slate-400">
+          Merupakan sebuah utility class dan juga konsep yang berkaitan dengan
+          pengaturan posisi/letak daripada suatu elemen didalam pembungkusnya.
+        </p>
+        <div class="clear-both"></div>
+      </div>
+    </div>
+
+    <div class="container mx-auto px-[2rem] my-20">
+      <h3 class="text-3xl text-center text-slate-700">Gallery Columns</h3>
+      <div class="my-4 w-full h-fit p-5 shadow-sm rounded-lg columns-3">
+        <img
+          src="https://picsum.photos/360/360"
+          alt="image"
+          class="mb-4 border"
+        />
+        <img
+          src="https://picsum.photos/360/360"
+          alt="image"
+          class="mb-4 border"
+        />
+        <img
+          src="https://picsum.photos/360/360"
+          alt="image"
+          class="mb-4 border"
+        />
+        <img
+          src="https://picsum.photos/360/360"
+          alt="image"
+          class="mb-4 border"
+        />
+        <img
+          src="https://picsum.photos/360/360"
+          alt="image"
+          class="mb-4 border"
+        />
+        <img
+          src="https://picsum.photos/360/360"
+          alt="image"
+          class="mb-4 border"
+        />
+      </div>
+    </div>
+
+    <a
+      href="#"
+      class="fixed bottom-5 right-5 rounded-full p-2 flex justify-center items-center bg-indigo-600 text-white"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="size-6"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M11.47 10.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 12.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z"
+          clip-rule="evenodd"
+        />
+        <path
+          fill-rule="evenodd"
+          d="M11.47 4.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 6.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </a>
+  </body>
 </html>
