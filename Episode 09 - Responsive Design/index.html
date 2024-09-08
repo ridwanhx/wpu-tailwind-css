@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Design | Tailwind CSS</title>
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configuration / Customization -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+            fontFamily: {
+              poppins: "Poppins",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- iconify -->
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  </head>
+  <body class="font-poppins">
+    <!-- Contoh sederhana implementasi Responsive Design -->
+    <!-- <div class="container mx-auto px-8 my-8 max-w-md sm:bg-red-300 md:bg-emerald-300 lg:bg-orange-300 xl:bg-sky-300"> -->
+
+    <!-- jika ada kondisi dimana hanya akan terjadi sesuatu di dimensi layar tertentu saja (dalam kasus ini hanya pada saat dimensi layarnya masuk ke kategori small), dan untuk dimensi layar lainnya, diberikan kondisi yang sama -->
+    <!-- pada kasus ini, ketika dibuka di lebar layar sm/small, akan ditambahkan warna merah pada container, dan untuk keadaan di lebar layar lainnya, dibuat transparan/dihilangkan warna nya. -->
+    <!-- penyelesaian kasus ini adalah dengan menambahkan reset ke dimensi layar yang lebih besar terdekatnya (misal jika ada penambahan kondisi di lebar layar sm, harus dilakukan reset di lebar layar md, dan seterusnya) -->
+    <!-- <div
+    class="container mx-auto px-8 my-8 max-w-md md:bg-red-300 lg:bg-transparent"
+  > -->
+
+    <!-- Mobile First -->
+    <!-- Mobile First Design : secara default tailwind menggunakan breakpoint mobile. Disarankan sebaiknya kita mendesain websitenya untuk mobile terlebih dahulu kalau misal ingin ada perubahan ketika dibuka di layar yang lebih besar, baru kita ubah setelahnya -->
+    <!-- secara langsung menambahkan kelas sm: itu bukan berarti untuk mobile tapi untuk layar yang kecil -->
+    <!-- jadi, secara tidak langsung maksud daripada konsep ini yaitu tailwind bermaksud agar pihak pengembang untuk menyesuaikan terlebih dahulu desain daripada websitenya dari ukuran layar terkecilnya dulu, jika dirasa sudah sesuai, maka baru bisa melanjutkan penyesuaian di kondisi layar lainnya. -->
+    <div class="container mx-auto px-8 my-8 max-w-md sm:max-w-xl md:max-w-5xl">
+      <h3 class="text-4xl font-bold mb-4 text-slate-800 sm:text-5xl md:text-6xl">
+        Muhamad R<span class="text-indigo-600">id</span>wan
+      </h3>
+
+      <!-- jika gambar didefinisikan dari tag img, maka kelas yang digunakan untuk positioning dan sizing gambarnya menggunakan object -->
+      <img
+        src="https://picsum.photos/id/1/720"
+        alt="image"
+        class="rounded-xl shadow-lg mb-4 w-full sm:h-64 sm:object-cover sm:object-center"
+      />
+      <h5 class="text-2xl font-semibold mb-4 capitalize text-slate-800 sm:text-3xl">
+        Mari belajar programming bersama.
+      </h5>
+      <p class="text-slate-600 mb-4 text-justify text-sm sm:text-base">
+        Responsive Design - Setiap utility class di tailwind bisa
+        diimplementasikan sesuai dengan breakpoint yang berbeda sehingga
+        memudahkan kita untuk membuat antarmuka responsif yang kompleks tanpa
+        meninggalkan html.
+      </p>
+      <div class="">
+        <a
+          href="#"
+          class="px-4 py-3 bg-indigo-600 uppercase tracking-wider text-white rounded-lg font-semibold text-sm flex justify-evenly items-center w-[11.5rem] hover:bg-indigo-700 sm:text-base"
+        >
+          Follow me on <iconify-icon icon="ri:twitter-x-fill"></iconify-icon>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
