@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox | Tailwind CSS</title>
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configuration / Customization -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+            fontFamily: {
+              poppins: "Poppins",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- iconify -->
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  </head>
+  <body class="font-poppins">
+    <div class="container px-8 my-4 max-w-xl sm:max-w-3xl sm:mx-auto">
+      <div class="w-full border rounded-t-lg bg-slate-100">
+        <h3 class="text-xl font-bold text-slate-800 p-5 sm:text-2xl">
+          Flexbox - Tailwind CSS
+        </h3>
+      </div>
+      <div
+        class="w-full border rounded-b-lg p-5 text-slate-600 text-sm sm:text-base"
+      >
+        <p>
+          Flexbox sendiri ialah sebuah tipe display yang bisa kita terapkan pada
+          elemen html kita, sehingga akan memudahkan kita dalam mengelola serta
+          melakukan layouting.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="container px-8 mx-auto mb-4 max-w-xl sm:max-w-3xl md:max-w-5xl lg:max-w-full lg:flex lg:p-0"
+    >
+      <!-- Use flex-1 to allow a flex item to grow and shrink as needed, ignoring its initial size: -->
+      <!-- flex-1 : terkait grow and shrink, yang dimana kelas ini akan memperbolehkan flex item untuk melakukan grow dan shrink sebagaimana yang dibutuhkan dengan mengabaikan inisial size nya -->
+      <div class="lg:p-12 lg:flex-1">
+        <h3 class="font-bold text-3xl text-slate-800 mb-4 sm:text-5xl">
+          Muhamad R<span class="text-indigo-600">id</span>wan
+        </h3>
+        <img
+          src="https://picsum.photos/id/1/720"
+          alt="gambar"
+          class="w-full rounded-lg mb-4 sm:h-96 sm:object-cover sm:object-center md:h-72 lg:hidden"
+        />
+        <h5
+          class="text-slate-800 capitalize text-2xl font-bold mb-4 sm:text-3xl"
+        >
+          mari belajar programming bersama.
+        </h5>
+        <p
+          class="text-sm text-slate-600 mb-8 text-justify sm:text-base md:text-lg"
+        >
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime
+          sapiente pariatur magni totam odio cumque voluptatibus nemo omnis
+          reprehenderit deleniti? Voluptatibus cum.
+        </p>
+        <div class="mb-20">
+          <a
+            href="#"
+            class="px-4 py-3 bg-indigo-600 text-white tracking-wider rounded-lg font-medium uppercase shadow-xl shadow-indigo-600/30"
+            >Click this button!</a
+          >
+        </div>
+      </div>
+      <div class="hidden lg:flex lg:w-1/2">
+        <img
+          src="https://picsum.photos/id/1/720"
+          alt="gambar"
+          class="object-cover object-center rounded-l-3xl"
+        />
+      </div>
+    </div>
+
+    <h3 class="font-bold text-2xl mt-4">Flex-Initial (default)</h3>
+    <div class="flex">
+      <!-- inisialisasi ukuran item -->
+      <div class="w-14 p-5 bg-emerald-300 m-2">01</div>
+      <div class="w-64 p-5 bg-emerald-300 m-2">02</div>
+      <div class="w-32 p-5 bg-emerald-300 m-2">03</div>
+    </div>
+
+    <h3 class="font-bold text-2xl mt-4">Flex-1</h3>
+    <div class="flex">
+      <!-- contoh penggambaran / cara kerja flex-1 / grow and shrink -->
+      <!-- setiap item yang didalamnya terdapat kelas ini, akan secara otomatis menyesuaikan lebar item agar sebisa mungkin memenuhi lebar layar -->
+      <!-- misal untuk contoh dibawah, terdapat 3 buah item yang dimana 1 item diberikan grow and shrink, secara otomatis lebar daripada item tersebut akan memenuhi kekosongan yang ditinggalkan item item lainnya -->
+      <!-- sehingga, item yang sudah diberikan kelas ini, akan menghiraukan lebar yang sudah didefinisikan (dalam kasus ini item tersebut menghiraukan w-14) -->
+      <div class="flex-1 w-14 p-5 bg-emerald-300 m-2">01</div>
+      <div class="w-64 p-5 bg-emerald-300 m-2">02</div>
+      <div class="w-48 p-5 bg-emerald-300 m-2">03</div>
+    </div>
+
+    <h3 class="font-semibold text-3xl text-slate-800 text-center my-8">
+      My Gallery
+    </h3>
+
+    <div class="container mx-auto px-8 mb-20 sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly">
+      <div class="shadow-lg overflow-hidden rounded-lg mb-8 bg-white sm:w-64 sm:mb-0 md:w-80 lg:w-72">
+        <img src="https://picsum.photos/1920/1080" alt="image" class="w-full" />
+        <div class="px-6 py-4">
+          <h5 class="text-xl font-bold mb-4">Image Title</h5>
+          <p class="text-slate-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </div>
+      </div>
+      <div class="shadow-lg overflow-hidden rounded-lg mb-8 bg-white sm:w-64 sm:mb-0 md:w-80 lg:w-72">
+        <img src="https://picsum.photos/1920/1080" alt="image" class="w-full" />
+        <div class="px-6 py-4">
+          <h5 class="text-xl font-bold mb-4">Image Title</h5>
+          <p class="text-slate-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </div>
+      </div>
+      <div class="shadow-lg overflow-hidden rounded-lg mb-8 bg-white sm:w-64 sm:mb-0 md:w-80 lg:w-72">
+        <img src="https://picsum.photos/1920/1080" alt="image" class="w-full" />
+        <div class="px-6 py-4">
+          <h5 class="text-xl font-bold mb-4">Image Title</h5>
+          <p class="text-slate-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </div>
+      </div>
+      <div class="shadow-lg overflow-hidden rounded-lg mb-8 bg-white sm:w-64 sm:mb-0 md:w-80 lg:w-72">
+        <img src="https://picsum.photos/1920/1080" alt="image" class="w-full" />
+        <div class="px-6 py-4">
+          <h5 class="text-xl font-bold mb-4">Image Title</h5>
+          <p class="text-slate-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </div>
+      </div>
+      <div class="shadow-lg overflow-hidden rounded-lg mb-8 bg-white sm:w-64 sm:mb-0 md:w-80 lg:w-72">
+        <img src="https://picsum.photos/1920/1080" alt="image" class="w-full" />
+        <div class="px-6 py-4">
+          <h5 class="text-xl font-bold mb-4">Image Title</h5>
+          <p class="text-slate-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
