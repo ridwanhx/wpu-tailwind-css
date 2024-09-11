@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid | Tailwind CSS</title>
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configuration / Customization -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+            fontFamily: {
+              poppins: "Poppins",
+            },
+            animation: {
+              wiggle: "wiggle 1s ease-in-out infinite",
+            },
+            keyframes: {
+              wiggle: {
+                "0%, 100%": { transform: "rotate(-6deg)" },
+                "50%": { transform: "rotate(6deg)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- iconify -->
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  </head>
+  <body class="font-poppins bg-[#FFF4EA]">
+    <!-- gap : berfungsi u/ mendefinisikan jarak antar kolom -->
+    <div
+      class="container px-8 my-8 grid grid-cols-2 gap-4 md:grid-cols-4 md:p-4"
+    >
+      <h3
+        class="h-full text-xl font-bold text-slate-800 capitalize md:row-start-2 md:col-start-4 md:flex"
+      >
+        <span class="self-center">
+          Muhamad R<span class="text-indigo-600 uppercase font-extrabold"
+            >id</span
+          >wan.
+        </span>
+      </h3>
+      <a
+        href="#"
+        class="h-full text-lg text-slate-600 font-semibold md:row-start-3 md:col-start-2 md:flex"
+      >
+        <span class="self-end">@muhamadridwan</span>
+      </a>
+
+      <!-- aspect ratio (aspect) : merupakan sebuah utility pada tailwind css yang biasa digunakan untuk memberikan nilai ukuran yang fix pada suatu elemen. -->
+      <!-- terdapat 3 nilai yang bisa didefinisikan -->
+      <!-- 1. aspect-auto (default) -->
+      <!-- 2. aspect-square : memberikan ukuran aspect ratio sebanyak 1 / 1. -->
+      <!-- 3. aspect-video : memberikan ukuran aspect ratio sebanyak 16 / 9. -->
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000"
+      >
+        <div
+          class="w-full h-full bg-[url('https://picsum.photos/id/112/1920/1080')] bg-cover bg-center grayscale group-hover:scale-125 group-hover:duration-1000 group-hover:grayscale-0 cursor-pointer"
+        ></div>
+      </div>
+
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000"
+      >
+        <div
+          class="w-full h-full bg-[url('https://picsum.photos/id/101/1920/1080')] bg-cover bg-center grayscale group-hover:scale-125 group-hover:duration-1000 group-hover:grayscale-0 cursor-pointer"
+        ></div>
+      </div>
+
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] md:col-start-4 xl:aspect-[4/3] group hover:scale-95 duration-1000"
+      >
+        <div
+          class="w-full h-full bg-[url('https://picsum.photos/id/42/1920/1080')] bg-cover bg-center grayscale group-hover:scale-125 group-hover:duration-1000 group-hover:grayscale-0 cursor-pointer"
+        ></div>
+      </div>
+
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] md:col-start-2 xl:aspect-[4/3] group hover:scale-95 duration-1000"
+      >
+        <div
+          class="w-full h-full bg-[url('https://picsum.photos/id/66/1920/1080')] bg-cover bg-center grayscale group-hover:scale-125 group-hover:duration-1000 group-hover:grayscale-0 cursor-pointer"
+        ></div>
+      </div>
+
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000"
+      >
+        <div
+          class="w-full h-full bg-[url('https://picsum.photos/id/82/1920/1080')] bg-cover bg-center grayscale group-hover:scale-125 group-hover:duration-1000 group-hover:grayscale-0 cursor-pointer"
+        ></div>
+      </div>
+
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000"
+      >
+        <div
+          class="w-full h-full bg-[url('https://picsum.photos/id/94/1920/1080')] bg-cover bg-center grayscale group-hover:scale-125 group-hover:duration-1000 group-hover:grayscale-0 cursor-pointer"
+        ></div>
+      </div>
+
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000"
+      >
+        <div
+          class="w-full h-full bg-[url('https://picsum.photos/id/127/1920/1080')] bg-cover bg-center grayscale group-hover:scale-125 group-hover:duration-1000 group-hover:grayscale-0 cursor-pointer"
+        ></div>
+      </div>
+      <div
+        class="w-full h-full bg-indigo-600 overflow-hidden aspect-[4/3] rounded-lg md:aspect-[3/4] md:col-start-2 xl:aspect-[4/3] group hover:scale-95 duration-1000"
+      >
+        <div
+          class="w-full h-full bg-[url('https://picsum.photos/id/111/1920/1080')] bg-cover bg-center grayscale group-hover:scale-125 group-hover:duration-1000 group-hover:grayscale-0 cursor-pointer"
+        ></div>
+      </div>
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] md:col-start-4 xl:aspect-[4/3] group hover:scale-95 duration-1000"
+      >
+        <div
+          class="w-full h-full bg-[url('https://picsum.photos/id/122/1920/1080')] bg-cover bg-center grayscale group-hover:scale-125 group-hover:duration-1000 group-hover:grayscale-0 cursor-pointer"
+        ></div>
+      </div>
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000"
+      >
+        <div
+          class="w-full h-full bg-[url('https://picsum.photos/id/110/1920/1080')] bg-cover bg-center grayscale group-hover:scale-125 group-hover:duration-1000 group-hover:grayscale-0 cursor-pointer"
+        ></div>
+      </div>
+    </div>
+  </body>
+</html>
