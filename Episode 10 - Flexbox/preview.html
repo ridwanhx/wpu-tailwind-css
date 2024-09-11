@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox | Tailwind CSS</title>
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configuration / Customization -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+            fontFamily: {
+              poppins: "Poppins",
+            },
+            animation: {
+              wiggle: "wiggle 1s ease-in-out infinite",
+            },
+            keyframes: {
+              wiggle: {
+                "0%, 100%": { transform: "rotate(-6deg)" },
+                "50%": { transform: "rotate(6deg)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- iconify -->
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  </head>
+  <body class="font-poppins">
+    <div class="container px-8 mx-auto my-8 lg:flex lg:items-center lg:p-0 lg:max-w-full">
+        <div class="lg:p-12 lg:flex-1">
+            <h3
+              class="text-3xl font-bold text-slate-800 mb-4 sm:text-5xl md:text-6xl"
+            >
+              Muhamad R<span class="text-indigo-600">id</span>wan
+            </h3>
+            <img
+              src="https://picsum.photos/id/1/1920/1080"
+              alt="image-caption"
+              class="mb-4 w-full rounded-lg sm:h-96 sm:object-cover sm:object-center md:h-80 lg:hidden"
+            />
+            <h5
+              class="text-2xl font-bold text-slate-800 mb-4 sm:text-3xl md:text-4xl"
+            >
+              Lorem ipsum dolor sit amet consectetur.
+            </h5>
+            <p
+              class="text-sm text-slate-600 text-justify mb-4 sm:text-base md:text-lg"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+              voluptates cupiditate sint, aliquid cum, ipsam obcaecati laboriosam,
+              nesciunt facilis perspiciatis est illum omnis quis ipsa!
+            </p>
+            <a
+              href="#"
+              class="py-3 px-4 bg-white border border-indigo-600 text-indigo-600 mb-4 rounded-lg inline-block shadow-lg shadow-indigo-600/50 hover:-translate-y-1 hover:duration-500 hover:shadow-indigo-600/25 active:bg-indigo-600 active:text-white"
+            >
+              <span
+                class="flex items-center font-semibold text-sm sm:text-base md:text-lg"
+              >
+                Click this button
+                <iconify-icon
+                  icon="ion:notifications-outline"
+                  class="ms-1 animate-wiggle"
+                ></iconify-icon>
+              </span>
+            </a>
+        </div>
+      <div class="hidden lg:block lg:w-1/2 flex-1 overflow-hidden">
+          <img
+            src="https://picsum.photos/id/1/1920/1080"
+            alt="image-caption"
+            class="mb-4 rounded-l-full"
+          />
+      </div>
+    </div>
+  </body>
+</html>
