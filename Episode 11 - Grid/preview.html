@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preview Episode 11 - Grid | Tailwind CSS</title>
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configuration / Customization -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+            fontFamily: {
+              poppins: "Poppins",
+            },
+            animation: {
+              wiggle: "wiggle 1s ease-in-out infinite",
+            },
+            keyframes: {
+              wiggle: {
+                "0%, 100%": { transform: "rotate(-6deg)" },
+                "50%": { transform: "rotate(6deg)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- iconify -->
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  </head>
+  <body class="font-poppins bg-[#F7F5EE]">
+    <div class="container p-4 grid grid-cols-2 gap-4 min-w-full md:grid-cols-4">
+      <div class="h-full grid grid-rows-3 gap-2 md:row-start-2 md:col-start-4">
+        <h3 class="text-xl text-slate-800 content-start md:text-2xl">
+          Grid zoom effect
+        </h3>
+        <h5 class="text-xl text-slate-700 content-center font-semibold">
+          Article <br />
+          Previous demo <br />
+          GitHub
+        </h5>
+        <span class="text-lg text-slate-600 content-end font-semibold">
+          Github.
+        </span>
+      </div>
+      <div class="md:row-start-2 md:col-start-2">
+        <a
+          href="#"
+          class="text-slate-600 text-base self-end font-bold h-full flex"
+        >
+          <span class="self-end"> @muhamadridwan </span>
+        </a>
+      </div>
+
+      <!-- pictures -->
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000"
+      >
+        <div
+          class="w-full h-full bg-cover bg-no-repeat bg-center grayscale group-hover:grayscale-0 group-hover:duration-1000 group-hover:scale-125 bg-[url('./img/1.jpg')]"
+        ></div>
+      </div>
+
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000 md:col-start-3"
+      >
+        <div
+          class="w-full h-full bg-cover bg-no-repeat bg-center grayscale group-hover:grayscale-0 group-hover:duration-1000 group-hover:scale-125 bg-[url('./img/2.jpg')]"
+        ></div>
+      </div>
+
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000"
+      >
+        <div
+          class="w-full h-full bg-cover bg-no-repeat bg-center grayscale group-hover:grayscale-0 group-hover:duration-1000 group-hover:scale-125 bg-[url('./img/3.jpg')]"
+        ></div>
+      </div>
+
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000"
+      >
+        <div
+          class="w-full h-full bg-cover bg-no-repeat bg-center grayscale group-hover:grayscale-0 group-hover:duration-1000 group-hover:scale-125 bg-[url('./img/4.jpg')]"
+        ></div>
+      </div>
+
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000"
+      >
+        <div
+          class="w-full h-full bg-cover bg-no-repeat bg-center grayscale group-hover:grayscale-0 group-hover:duration-1000 group-hover:scale-125 bg-[url('./img/5.jpg')]"
+        ></div>
+      </div>
+
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000 md:col-start-2"
+      >
+        <div
+          class="w-full h-full bg-cover bg-no-repeat bg-center grayscale group-hover:grayscale-0 group-hover:duration-1000 group-hover:scale-125 bg-[url('./img/6.jpg')]"
+        ></div>
+      </div>
+
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000 md:col-start-4"
+      >
+        <div
+          class="w-full h-full bg-cover bg-no-repeat bg-center grayscale group-hover:grayscale-0 group-hover:duration-1000 group-hover:scale-125 bg-[url('./img/7.jpg')]"
+        ></div>
+      </div>
+
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000"
+      >
+        <div
+          class="w-full h-full bg-cover bg-no-repeat bg-center grayscale group-hover:grayscale-0 group-hover:duration-1000 group-hover:scale-125 bg-[url('./img/8.jpg')]"
+        ></div>
+      </div>
+
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000 md:col-start-3"
+      >
+        <div
+          class="w-full h-full bg-cover bg-no-repeat bg-center grayscale group-hover:grayscale-0 group-hover:duration-1000 group-hover:scale-125 bg-[url('./img/9.jpg')]"
+        ></div>
+      </div>
+
+      <div
+        class="w-full h-full bg-indigo-600 aspect-[4/3] rounded-lg overflow-hidden md:aspect-[3/4] xl:aspect-[4/3] group hover:scale-95 duration-1000 md:col-start-3"
+      >
+        <div
+          class="w-full h-full bg-cover bg-no-repeat bg-center grayscale group-hover:grayscale-0 group-hover:duration-1000 group-hover:scale-125 bg-[url('./img/10.jpg')]"
+        ></div>
+      </div>
+    </div>
+  </body>
+</html>
