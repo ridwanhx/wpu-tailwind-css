@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function & Directives | Tailwind CSS</title>
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- style css by tailwind -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- iconify -->
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  </head>
+  <body class="font-poppins">
+    <div class="container px-4 my-4 mx-auto sm:max-w-full md:max-w-2xl">
+      <!-- first card -->
+      <div class="mb-4 shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4 border rounded-t-lg bg-indigo-600">
+          <h3 class="font-bold text-xl text-white">Functions</h3>
+        </div>
+        <div class="p-4 border border-t-0 rounded-b-lg bg-white">
+          <h5 class="font-semibold text-slate-700 text-lg mb-1">Definisi :</h5>
+          <p class="text-base text-slate-600 text-justify">
+            Tailwind adds a few custom functions you can use in your CSS to
+            access Tailwind-specific values. These functions are evaluated at
+            build-time, and are replaced by static values in your final CSS.
+            <br />
+            <span class="font-semibold">theme() : </span>
+            Use the theme() function to access your Tailwind config values using
+            dot notation. <br />
+            <span
+              class="font-mono p-4 w-full bg-slate-800 text-purple-600 block rounded-lg my-4"
+            >
+              <span class="text-pink-600"
+                >.content-area { <br />
+                <span class="ms-6 text-green-400"
+                  >height: calc(100vh - theme(spacing.12));</span
+                >
+                <br />
+                }
+              </span>
+            </span>
+            If you need to access a value that contains a dot (like the 2.5
+            value in the spacing scale), you can use square bracket notation:
+            <br />
+            <span class="font-semibold">theme() : </span>
+            Use the theme() function to access your Tailwind config values using
+            dot notation. <br />
+            <span
+              class="font-mono p-4 w-full bg-slate-800 text-purple-600 block rounded-lg my-4"
+            >
+              <span class="text-pink-600"
+                >.content-area { <br />
+                <span class="ms-6 text-green-400"
+                  >height: calc(100vh - theme(spacing[2.5]))</span
+                >
+                <br />
+                }
+              </span>
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- second card -->
+      <div class="mb-4 shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4 border rounded-t-lg bg-indigo-600">
+          <h3 class="font-bold text-xl text-white">Directives</h3>
+        </div>
+        <div class="p-4 border border-t-0 rounded-b-lg bg-white">
+          <h5 class="font-semibold text-slate-700 text-lg mb-1">Definisi :</h5>
+          <p class="text-base text-slate-600 text-justify">
+            Merupakan sebuah keyword didalam tailwind css yang bisa kita gunakan
+            yang format penulisannya adalah "at-rules", atau kombinasi antara
+            simbol @ dan rules nya apa. Yang kemudian bisa kita gunakan didalam
+            css yang akan menawarkan fungi fungsi spesial terhadap proyek yang
+            sedang kita kerjakan.
+          </p>
+        </div>
+      </div>
+
+      <!-- third card -->
+      <div class="mb-4 shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4 border rounded-t-lg bg-indigo-600">
+          <h3 class="font-bold text-xl text-white">Directives</h3>
+        </div>
+        <div class="p-4 border border-t-0 rounded-b-lg bg-white">
+          <h5 class="font-semibold text-slate-700 text-lg mb-1">@tailwind :</h5>
+          <p class="text-base text-slate-600 text-justify">
+            adalah ketika kita ingin melakukan generate terhadap file css nya.
+            Secara default terbagi menjadi 3 (base, component, dan utilities).
+          </p>
+          <p class="text-base text-slate-600 text-justify">
+            <span class="font-bold">base :</span> merupakan style-style utama
+            yang menjadi dasar dari tailwind, didalamnya terdapat seperti reset,
+            ukuran/style dasar dari semua html. <br />
+            <span class="font-bold">component :</span> tailwind akan menambahkan
+            kelas kelas komponen kalau ada, atau kelas kelas komponen yang
+            didaftarkan oleh plugin. <br />
+            <span class="font-bold">utilities :</span> tailwind akan menambahkan
+            kelas kelas utility yang akan kita gunakan. <br />
+            <span class="font-bold">variants (non-default) :</span> contoh
+            sederhananya seperti hover, focus, active, dan sebagainya. <br />
+          </p>
+        </div>
+      </div>
+
+      <!-- forth card -->
+      <div class="mb-4 shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4 border rounded-t-lg bg-indigo-600">
+          <h3 class="font-bold text-xl text-white">Directives</h3>
+        </div>
+        <div class="p-4 border border-t-0 rounded-b-lg bg-white">
+          <h5 class="font-semibold text-slate-700 text-lg mb-1">@layer :</h5>
+          <p class="text-base text-slate-600 text-justify">
+            biasa digunakan ketika kita ingin memodifikasi isi dari 3 directives
+            diatas (maksudnya yang base, component, dan utilities). Misal
+            sederhananya kita ingin mengatur agar secara default element h1
+            berukuran 2xl, maka hal seperti itu bisa diatur melalui directives
+            yang satu ini.
+          </p>
+        </div>
+      </div>
+
+      <!-- forth card -->
+      <div class="mb-4 shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4 border rounded-t-lg bg-indigo-600">
+          <h3 class="font-bold text-xl text-white">Directives</h3>
+        </div>
+        <div class="p-4 border border-t-0 rounded-b-lg bg-white">
+          <h5 class="font-semibold text-slate-700 text-lg mb-1">@apply :</h5>
+          <p class="text-base text-slate-600 text-justify">
+            digunakan untuk melakukan penyimpanan utility-utility class yang
+            sudah ada di tailwind untuk kemudian dimasukan kedalam custom css
+            kita secara inline. <br />
+            contohnya : ingin menambahkan kelas custom, tapi property nya
+            memakai property milik tailwind.
+          </p>
+        </div>
+      </div>
+
+      <h3>Muhamad Ridwan</h3>
+      <h4>Muhamad Ridwan</h4>
+      <h5>Muhamad Ridwan</h5>
+      <h6>Muhamad Ridwan</h6>
+
+      <!-- kelas card from component -->
+      <!-- alert -->
+      <div class="alert alert-danger">Hello World!</div>
+      <div class="alert alert-warning">Hello World!</div>
+      <div class="alert alert-success">Hello World!</div>
+      <div class="alert alert-primary">Hello World!</div>
+
+      <!-- btn -->
+      <a href="" class="btn btn-primary">Primary Button</a>
+      <a href="" class="btn btn-danger">Danger Button</a>
+      <a href="" class="btn btn-warning">Warning Button</a>
+      <a href="" class="btn btn-success">Success Button</a>
+    </div>
+  </body>
+</html>
