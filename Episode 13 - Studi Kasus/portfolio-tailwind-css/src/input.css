@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* button style */
+  /* default */
+  .btn {
+    @apply px-8 py-3 rounded-full text-base font-semibold transition duration-500 ease-in-out;
+  }
+
+  /* primary button style */
+  .btn-primary {
+    @apply opacity-80 text-white bg-primary hover:opacity-100 hover:shadow-lg;
+  }
+  /* end button style */
+}
