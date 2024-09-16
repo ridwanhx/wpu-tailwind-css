@@ -631,6 +631,46 @@ video {
 
 /* end button style */
 
+.hamburger-line {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  height: 2px;
+  width: 30px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+}
+
+/* cari elemen yang nama kelasnya hamburger-active, lalu cari didalamnya persis elemen child-nya yang dia merupakan elemen ke-1 */
+
+.hamburger-active > span:nth-child(1) {
+  --tw-rotate: 45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+/* cari elemen yang nama kelasnya hamburger-active, lalu cari didalamnya persis elemen child-nya yang dia merupakan elemen ke-2 */
+
+.hamburger-active > span:nth-child(2) {
+  /* mengubah skala dari elemennya menjadi 0 agar elemen terlihat menghilang dari peradaban */
+  --tw-scale-x: 0;
+  --tw-scale-y: 0;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+/* cari elemen yang nama kelasnya hamburger-active, lalu cari didalamnya persis elemen child-nya yang dia merupakan elemen ke-3 */
+
+.hamburger-active > span:nth-child(3) {
+  --tw-rotate: -45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+/* navbar */
+
+.navbar-fixed {
+  position: fixed;
+  z-index: 999;
+}
+
 .absolute {
   position: absolute;
 }
@@ -643,12 +683,28 @@ video {
   bottom: 0px;
 }
 
+.left-0 {
+  left: 0px;
+}
+
 .left-1\/2 {
   left: 50%;
 }
 
+.right-4 {
+  right: 1rem;
+}
+
+.top-0 {
+  top: 0px;
+}
+
 .-z-10 {
   z-index: -10;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 .mb-10 {
@@ -695,6 +751,14 @@ video {
   max-width: 36rem;
 }
 
+.origin-bottom-left {
+  transform-origin: bottom left;
+}
+
+.origin-top-left {
+  transform-origin: top left;
+}
+
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -710,6 +774,10 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .gap-2 {
@@ -732,6 +800,24 @@ video {
   border-width: 1px;
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-indigo-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(129 140 248 / var(--tw-bg-opacity));
+}
+
+.bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(247 169 45 / var(--tw-bg-opacity));
+}
+
+.bg-dark\/25 {
+  background-color: rgb(15 23 42 / 0.25);
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -741,12 +827,13 @@ video {
   padding-right: 1rem;
 }
 
-.pb-32 {
-  padding-bottom: 8rem;
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
-.pt-10 {
-  padding-top: 2.5rem;
+.pb-32 {
+  padding-bottom: 8rem;
 }
 
 .pt-36 {
@@ -823,6 +910,12 @@ video {
   color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
+.backdrop-blur-md {
+  --tw-backdrop-blur: blur(12px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -833,6 +926,14 @@ video {
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: 'inter', sans-serif;
 }
 
 .hover\:border-dark:hover {
@@ -891,6 +992,10 @@ video {
 
   .lg\:w-1\/2 {
     width: 50%;
+  }
+
+  .lg\:pt-10 {
+    padding-top: 2.5rem;
   }
 
   .lg\:text-2xl {

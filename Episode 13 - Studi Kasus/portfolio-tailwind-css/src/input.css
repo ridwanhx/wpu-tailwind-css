@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: 'inter', sans-serif;
+}
+
 @layer components {
   /* button style */
   /* default */
@@ -14,4 +18,29 @@
     @apply opacity-80 text-white bg-primary hover:opacity-100 hover:shadow-lg;
   }
   /* end button style */
+
+  .hamburger-line {
+    @apply w-[30px] h-[2px] my-2 block bg-dark;
+  }
+
+  /* cari elemen yang nama kelasnya hamburger-active, lalu cari didalamnya persis elemen child-nya yang dia merupakan elemen ke-1 */
+  .hamburger-active > span:nth-child(1) {
+    @apply rotate-45;
+  }
+
+  /* cari elemen yang nama kelasnya hamburger-active, lalu cari didalamnya persis elemen child-nya yang dia merupakan elemen ke-2 */
+  .hamburger-active > span:nth-child(2) {
+    /* mengubah skala dari elemennya menjadi 0 agar elemen terlihat menghilang dari peradaban */
+    @apply scale-0;
+  }
+
+  /* cari elemen yang nama kelasnya hamburger-active, lalu cari didalamnya persis elemen child-nya yang dia merupakan elemen ke-3 */
+  .hamburger-active > span:nth-child(3) {
+    @apply -rotate-45;
+  }
+
+  /* navbar */
+  .navbar-fixed {
+    @apply fixed z-[999];
+  }
 }
