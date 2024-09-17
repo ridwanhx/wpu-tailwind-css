@@ -13,6 +13,10 @@ module.exports = {
         dark: "#0f172a",
         light: "#cbd5e1",
       },
+      fontFamily: {
+        inter: 'Inter',
+        montserrat: 'Montserrat',
+      },
       screens: {
         "2xl": "1320px",
       },

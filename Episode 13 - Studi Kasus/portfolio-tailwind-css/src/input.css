@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   font-family: "inter", sans-serif;
-}
+} */
 
 @layer components {
   /* button style */
