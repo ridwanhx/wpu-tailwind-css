@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./resources/**/*.{html,js}"],
+  darkMode: "class",
   theme: {
     container: {
       center: true,
@@ -14,8 +15,8 @@ module.exports = {
         light: "#cbd5e1",
       },
       fontFamily: {
-        inter: 'Inter',
-        montserrat: 'Montserrat',
+        inter: "Inter",
+        montserrat: "Montserrat",
       },
       screens: {
         "2xl": "1320px",

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +19,21 @@
     />
 
     <!-- style from tailwind css -->
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/final.css" />
+
+    <script>
+      // pengaturan dark mode local storage
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
   <body class="font-inter">
     <!-- Header Start -->
@@ -54,50 +68,107 @@
             <!-- nav elements -->
             <nav
               id="nav-menu"
-              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"
+              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none lg:dark:bg-transparent dark:bg-dark dark:shadow-slate-500/20"
             >
               <ul class="block lg:flex">
                 <li class="group">
                   <a
                     href="#home"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary capitalize"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white capitalize"
                     >Beranda</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#about"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary capitalize"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white capitalize"
                     >Tentang Saya</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#portfolio"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary capitalize"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white capitalize"
                     >Portfolio</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#client"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary capitalize"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white capitalize"
                     >client</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#blog"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary capitalize"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white capitalize"
                     >blog</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#contact"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary capitalize"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white capitalize"
                     >contact</a
                   >
+                </li>
+                <li class="flex items-center pl-8 mt-3 lg:mt-0">
+                  <div class="flex">
+                    <span class="mr-2 text-sm text-slate-500 dark:text-white"
+                      >light</span
+                    >
+                    <input type="checkbox" id="dark-toggle" class="hidden" />
+                    <label for="dark-toggle">
+                      <div
+                        class="flex h-7 w-12 cursor-pointer items-center rounded-full bg-sky-400 dark:bg-transparent dark:bg-primary p-1"
+                      >
+                        <div
+                          class="toggle-circle h-5 w-5 rounded-full bg-white flex justify-center items-center transition duration-500 ease-in-out dark:bg-slate-800"
+                        >
+                          <!-- light mode -->
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="65%"
+                            height="65%"
+                            viewBox="0 0 36 36"
+                            class="block"
+                            id="icn-light-mode"
+                          >
+                            <path
+                              fill="#ffac33"
+                              d="M16 2s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2zm18 14s2 0 2 2s-2 2-2 2h-2s-2 0-2-2s2-2 2-2zM4 16s2 0 2 2s-2 2-2 2H2s-2 0-2-2s2-2 2-2zm5.121-8.707s1.414 1.414 0 2.828s-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0zm21 21s1.414 1.414 0 2.828s-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828s2.828 0 2.828 0zm-.413-18.172s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828zm-21 21s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828zM16 32s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2z"
+                            />
+                            <circle cx="18" cy="18" r="10" fill="#ffac33" />
+                          </svg>
+
+                          <!-- dark mode -->
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="65%"
+                            height="65%"
+                            viewBox="0 0 32 32"
+                            class="rotate-90 hidden"
+                            id="icn-dark-mode"
+                          >
+                            <g fill="none">
+                              <path
+                                fill="#fcd53f"
+                                d="M23.41 5.632c.5 2.04.56 4.26.02 6.56c-1.26 5.33-5.64 9.51-11.02 10.48c-2.91.53-5.68.13-8.09-.92c-.56-.25-1.09.39-.8.93c2.65 4.88 8.11 8 14.22 7.19c6.23-.83 11.22-5.91 11.97-12.15c.6-5.18-1.6-9.86-5.28-12.75c-.47-.36-1.16.08-1.02.66"
+                              />
+                              <path
+                                fill="#f9c23c"
+                                d="M27.87 12.562a1.57 1.57 0 1 1-3.14 0a1.57 1.57 0 0 1 3.14 0m-12.92 12.88a1.57 1.57 0 1 1-3.14 0a1.57 1.57 0 0 1 3.14 0m11.85-6.47a.99.99 0 1 0 0-1.98a.99.99 0 0 0 0 1.98m-2 3.01a3 3 0 1 1-6 0a3 3 0 0 1 6 0"
+                              />
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+                    </label>
+                    <span class="ml-2 text-sm text-slate-500 dark:text-white"
+                      >dark</span
+                    >
+                  </div>
                 </li>
               </ul>
             </nav>
@@ -108,25 +179,27 @@
     <!-- Header End -->
 
     <!-- Hero Section Start -->
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-36 dark:bg-dark">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full self-center px-4 lg:w-1/2">
             <h1 class="text-base font-semibold text-primary md:text-xl">
               Halo Semua 👋, Saya
-              <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl"
+              <span
+                class="block font-bold text-dark text-4xl mt-1 lg:text-5xl dark:text-white"
                 >Tyla Windya Claravelya</span
               >
             </h1>
             <h2
               class="font-medium text-secondary text-lg mb-5 mt-1 lg:text-2xl"
             >
-              Student & <span class="text-dark">Web Developer</span>
+              Student &
+              <span class="text-dark dark:text-white">Web Developer</span>
             </h2>
             <!-- leading : mengatur line-height -->
             <p class="font-medium text-slate-400 mb-10 leading-relaxed">
               Belajar web programming itu menyenangkan bukan,
-              <span class="text-dark font-bold">Bukan!</span>
+              <span class="text-dark font-bold dark:text-white">Bukan!</span>
             </p>
 
             <a href="#" class="btn btn-primary">Hubungi Saya</a>
@@ -136,10 +209,10 @@
               <img
                 src="../../public/img/none-bg.svg"
                 alt="hero-image"
-                class="w-full h-full"
+                class="w-full h-full relative z-[4]"
               />
               <span
-                class="absolute -z-10 bottom-0 left-1/2 -translate-x-1/2 sm:scale-110 sm:bottom-14 md:scale-125 md:-translate-y-16"
+                class="absolute bottom-0 left-1/2 -translate-x-1/2 sm:scale-110 sm:bottom-14 md:scale-125 md:-translate-y-16"
               >
                 <svg
                   viewBox="0 0 200 200"
@@ -162,14 +235,16 @@
     <!-- Hero Section End -->
 
     <!-- About Section Start -->
-    <section id="about" class="pt-36 pb-32">
+    <section id="about" class="pt-36 pb-32 dark:bg-dark">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full px-4 mb-10 lg:w-1/2">
             <h4 class="text-primary font-bold uppercase text-lg mb-4">
               tentang saya
             </h4>
-            <h2 class="text-3xl text-dark font-bold mb-4 max-w-md lg:text-4xl">
+            <h2
+              class="text-3xl text-dark font-bold mb-4 max-w-md lg:text-4xl dark:text-white"
+            >
               Yuk, belajar web programming di WPU!
             </h2>
             <p class="mb-4 text-secondary text-medium max-w-xl lg:text-lg">
@@ -180,7 +255,9 @@
             </p>
           </div>
           <div class="w-full px-4 lg:w-1/2 lg:pt-10">
-            <h3 class="text-2xl text-dark font-semibold mb-4 lg:text-3xl">
+            <h3
+              class="text-2xl text-dark font-semibold mb-4 lg:text-3xl dark:text-white"
+            >
               Mari berteman
             </h3>
             <p class="text-secondary text-base mb-4 lg:text-lg">
@@ -291,7 +368,7 @@
     <!-- About Section End -->
 
     <!-- Portfolio Section Start -->
-    <section id="portfolio" class="pt-36 pb-16 bg-slate-100">
+    <section id="portfolio" class="pt-36 pb-16 bg-slate-100 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-xl mx-auto text-center mb-16">
@@ -299,7 +376,7 @@
               Portfolio
             </h4>
             <h2
-              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl"
+              class="font-bold text-dark dark:text-white text-3xl mb-4 sm:text-4xl lg:text-5xl"
             >
               Project Terbaru
             </h2>
@@ -322,7 +399,9 @@
                 class="w-full"
               />
             </div>
-            <h3 class="font-semibold text-dark text-xl mt-5 mb-3">
+            <h3
+              class="font-semibold text-dark dark:text-white text-xl mt-5 mb-3"
+            >
               Website Monitoring Bimbingan Proyek 2
             </h3>
             <p class="font-medium text-base text-secondary">
@@ -340,7 +419,9 @@
                 class="w-full"
               />
             </div>
-            <h3 class="font-semibold text-dark text-xl mt-5 mb-3">
+            <h3
+              class="font-semibold text-dark dark:text-white text-xl mt-5 mb-3"
+            >
               Website Edukasi Stunting
             </h3>
             <p class="font-medium text-base text-secondary">
@@ -358,7 +439,9 @@
                 class="w-full"
               />
             </div>
-            <h3 class="font-semibold text-dark text-xl mt-5 mb-3">
+            <h3
+              class="font-semibold text-dark dark:text-white text-xl mt-5 mb-3"
+            >
               Website Brawijaya dengan Bootstrap 5
             </h3>
             <p class="font-medium text-base text-secondary">
@@ -376,7 +459,9 @@
                 class="w-full"
               />
             </div>
-            <h3 class="font-semibold text-dark text-xl mt-5 mb-3">
+            <h3
+              class="font-semibold text-dark dark:text-white text-xl mt-5 mb-3"
+            >
               Website Blog sederhana menggunakan Laravel 11
             </h3>
             <p class="font-medium text-base text-secondary">
@@ -390,7 +475,7 @@
     <!-- Portfolio Section End -->
 
     <!-- Client Section Start -->
-    <section id="client" class="pt-36 pb-32 bg-slate-800">
+    <section id="client" class="pt-36 pb-32 bg-slate-800 dark:bg-slate-300">
       <div class="container">
         <div class="w-full px-4">
           <div class="mx-auto text-center mb-16">
@@ -398,7 +483,7 @@
               Clients
             </h4>
             <h2
-              class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl"
+              class="font-bold text-white dark:text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl"
             >
               Yang pernah bekerja sama
             </h2>
@@ -442,13 +527,13 @@
     <!-- Client Section End -->
 
     <!-- section blog start -->
-    <section id="blog" class="pt-36 pb-32 bg-slate-100">
+    <section id="blog" class="pt-36 pb-32 bg-slate-100 dark:bg-dark">
       <div class="container">
         <div class="w-full px-4">
           <div class="text-center mb-16">
             <h4 class="font-semibold text-primary text-lg text-center">Blog</h4>
             <h2
-              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl capitalize"
+              class="font-bold text-dark dark:text-white dark:text-white text-3xl mb-4 sm:text-4xl lg:text-5xl capitalize"
             >
               Tulisan terkini
             </h2>
@@ -468,11 +553,11 @@
                 alt="blog-1"
                 class="w-full grayscale"
               />
-              <div class="py-8 px-6">
+              <div class="py-8 px-6 dark:bg-slate-800">
                 <h3 class="mb-4">
                   <a
                     href="#"
-                    class="block text-xl font-bold text-dark capitalize hover:text-primary truncate"
+                    class="block text-xl font-bold text-dark capitalize hover:text-primary truncate dark:text-white"
                   >
                     Tips belajar programming
                   </a>
@@ -498,11 +583,11 @@
                 alt="blog-1"
                 class="w-full"
               />
-              <div class="py-8 px-6">
+              <div class="py-8 px-6 dark:bg-slate-800">
                 <h3 class="mb-4">
                   <a
                     href="#"
-                    class="block text-xl font-bold text-dark capitalize hover:text-primary truncate"
+                    class="block text-xl font-bold text-dark capitalize hover:text-primary truncate dark:text-white"
                   >
                     Mengungkap misteri alam semesta
                   </a>
@@ -528,11 +613,11 @@
                 alt="blog-1"
                 class="w-full"
               />
-              <div class="py-8 px-6">
+              <div class="py-8 px-6 dark:bg-slate-800">
                 <h3 class="mb-4">
                   <a
                     href="#"
-                    class="block text-xl font-bold text-dark capitalize hover:text-primary truncate"
+                    class="block text-xl font-bold text-dark capitalize hover:text-primary truncate dark:text-white"
                   >
                     Melanjutkan estafet kekuasaan
                   </a>
@@ -558,11 +643,11 @@
                 alt="blog-1"
                 class="w-full"
               />
-              <div class="py-8 px-6">
+              <div class="py-8 px-6 dark:bg-slate-800">
                 <h3 class="mb-4">
                   <a
                     href="#"
-                    class="block text-xl font-bold text-dark capitalize hover:text-primary truncate"
+                    class="block text-xl font-bold text-dark capitalize hover:text-primary truncate dark:text-white"
                   >
                     Hidup di lingkaran oligarki
                   </a>
@@ -585,7 +670,7 @@
     <!-- section blog end -->
 
     <!-- Section contact start -->
-    <section id="contact" class="pt-36 pb-32">
+    <section id="contact" class="pt-36 pb-32 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
           <div class="text-center mb-16">
@@ -593,7 +678,7 @@
               Contact
             </h4>
             <h2
-              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl capitalize"
+              class="font-bold text-dark dark:text-white text-3xl mb-4 sm:text-4xl lg:text-5xl capitalize"
             >
               Hubungi Kami
             </h2>
@@ -656,49 +741,83 @@
     <!-- Section contact end -->
 
     <!-- Footer start  -->
-     <footer id="footer" class="bg-dark pt-36 pb-12">
+    <footer id="footer" class="bg-dark pt-36 pb-12">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full px-4 mb-12 md:w-1/3">
-            <h2 class="text-4xl font-bold text-white uppercase tracking-widest mb-12">TYCLA</h2>
-            <h3 class="text-2xl text-slate-200 font-bold capitalize mb-4">hubungi kami</h3>
-            <span class="block text-slate-500 font-medium mb-2">muhamadridwan14@gmail.com</span>
-            <span class="block text-slate-500 font-medium mb-2">Jl. Dr. Setiabudi No. 154</span>
+            <h2
+              class="text-4xl font-bold text-white uppercase tracking-widest mb-12"
+            >
+              TYCLA
+            </h2>
+            <h3 class="text-2xl text-slate-200 font-bold capitalize mb-4">
+              hubungi kami
+            </h3>
+            <span class="block text-slate-500 font-medium mb-2"
+              >muhamadridwan14@gmail.com</span
+            >
+            <span class="block text-slate-500 font-medium mb-2"
+              >Jl. Dr. Setiabudi No. 154</span
+            >
             <span class="block text-slate-500 font-medium mb-2">Bandung</span>
           </div>
 
           <div class="w-full px-4 mb-12 md:w-1/3">
-            <h3 class="text-2xl text-slate-200 font-bold capitalize mb-4">kategori tulisan</h3>
+            <h3 class="text-2xl text-slate-200 font-bold capitalize mb-4">
+              kategori tulisan
+            </h3>
             <ul class="text-slate-500">
               <li>
-                <a href="#" class="inline-block text-base font-medium mb-2">Programming</a>
+                <a href="#" class="inline-block text-base font-medium mb-2"
+                  >Programming</a
+                >
               </li>
               <li>
-                <a href="#" class="inline-block text-base font-medium mb-2">Teknologi</a>
+                <a href="#" class="inline-block text-base font-medium mb-2"
+                  >Teknologi</a
+                >
               </li>
               <li>
-                <a href="#" class="inline-block text-base font-medium mb-2">Gaya Hidup</a>
+                <a href="#" class="inline-block text-base font-medium mb-2"
+                  >Gaya Hidup</a
+                >
               </li>
             </ul>
           </div>
 
           <div class="w-full px-4 mb-12 md:w-1/3">
-            <h3 class="text-2xl text-slate-200 font-bold capitalize mb-4">tautan</h3>
+            <h3 class="text-2xl text-slate-200 font-bold capitalize mb-4">
+              tautan
+            </h3>
             <ul class="text-slate-500">
               <li>
-                <a href="#home" class="inline-block text-base font-medium mb-2">Beranda</a>
+                <a href="#home" class="inline-block text-base font-medium mb-2"
+                  >Beranda</a
+                >
               </li>
               <li>
-                <a href="#about" class="inline-block text-base font-medium mb-2">Tentang Saya</a>
+                <a href="#about" class="inline-block text-base font-medium mb-2"
+                  >Tentang Saya</a
+                >
               </li>
               <li>
-                <a href="#portfolio" class="inline-block text-base font-medium mb-2">Portfolio</a>
+                <a
+                  href="#portfolio"
+                  class="inline-block text-base font-medium mb-2"
+                  >Portfolio</a
+                >
               </li>
               <li>
-                <a href="#client" class="inline-block text-base font-medium mb-2">Clients</a>
+                <a
+                  href="#client"
+                  class="inline-block text-base font-medium mb-2"
+                  >Clients</a
+                >
               </li>
               <li>
-                <a href="#blog" class="inline-block text-base font-medium mb-2">Blog</a>
+                <a href="#blog" class="inline-block text-base font-medium mb-2"
+                  >Blog</a
+                >
               </li>
             </ul>
           </div>
@@ -722,7 +841,7 @@
                 />
               </svg>
             </a>
-  
+
             <!-- tiktok -->
             <a
               href="#"
@@ -740,7 +859,7 @@
                 />
               </svg>
             </a>
-  
+
             <!-- github -->
             <a
               href="#"
@@ -763,7 +882,7 @@
                 </g>
               </svg>
             </a>
-  
+
             <!-- facebook -->
             <a
               href="#"
@@ -781,7 +900,7 @@
                 />
               </svg>
             </a>
-  
+
             <!-- twitter -->
             <a
               href="#"
@@ -800,12 +919,25 @@
               </svg>
             </a>
           </div>
-          <p class="text-xs font-medium text-slate-500 capitalize text-center">Dibuat dengan 🤘 oleh <a href="#" class="text-primary">Muhamad Ridwan</a> <br> menggunakan <a href="#" class="text-indigo-600">tailwind CSS</a>.
+          <p class="text-xs font-medium text-slate-500 capitalize text-center">
+            Dibuat dengan 🤘 oleh
+            <a href="#" class="text-primary">Muhamad Ridwan</a> <br />
+            menggunakan <a href="#" class="text-indigo-600">tailwind CSS</a>.
+          </p>
         </div>
-
       </div>
-     </footer>
+    </footer>
     <!-- Footer end  -->
+
+    <!-- Back to top start -->
+    <a
+      href="home"
+      class="h-14 w-14 p-4 bg-indigo-600 rounded-full fixed z-[999] bottom-4 right-4 justify-center items-center hover:animate-pulse hidden"
+      id="backToTop"
+    >
+      <span class="block w-5 h-5 border-t-2 border-l-2 rotate-45 mt-2"></span>
+    </a>
+    <!-- Back to top end -->
 
     <script src="../js/script.js"></script>
   </body>
