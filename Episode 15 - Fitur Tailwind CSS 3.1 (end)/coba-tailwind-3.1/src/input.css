@@ -1,0 +1,24 @@
+/* deklarasi variabel untuk warna */
+:root {
+  --warna-hijau: 16 185 129;
+  --warna-ocean: 2 132 255;
+
+  --warna-default: var(--warna-hijau);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .kotak {
+    /* mengubah opacity menggunakan channel alpha */
+    @apply flex justify-center items-center w-[100px] h-[100px] bg-royal/20 m-4 rounded p-4;
+  }
+  .lingkaran {
+    @apply flex justify-center items-center w-[100px] h-[100px] bg-royal m-4 rounded-full p-4;
+
+    /* cara sandhika */
+    background-color: theme(colors.royal / 20%);
+  }
+}
