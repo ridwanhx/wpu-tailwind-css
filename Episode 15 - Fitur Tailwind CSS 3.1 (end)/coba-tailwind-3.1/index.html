@@ -17,7 +17,7 @@
     <!-- membuat tema warna -->
     <div class="container pt-20 pb-16 bg-slate-100">
       <div class="flex justify-center items-center">
-        <div class="p-4 bg-default/10 rounded w-1/2">
+        <div class="p-4 bg-default/10 rounded w-1/2 bg-red-200">
           <h3 class="font-bold text-xl text-center mb-4 text-default/100">
             Login
           </h3>
@@ -40,5 +40,109 @@
         </div>
       </div>
     </div>
+
+    <!-- border spacing -->
+    <!-- utility yang satu ini (border-spacing) hanya bisa dijalankan hanya ketika border-separate sudah ditambahkan -->
+    <div class="container px-4 py-8">
+      <table class="w-full text-sm border-separate border-spacing-4">
+        <thead class="bg-slate-100">
+          <tr class="text-center">
+            <th
+              class="w-1/2 border border-slate-200 text-slate-900 p-4 font-semibold"
+            >
+              Provinsi
+            </th>
+            <th
+              class="w-1/2 border border-slate-200 text-slate-900 p-4 font-semibold"
+            >
+              Ibu Kota
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-center">
+            <td
+              class="w-1/2 border border-slate-200 text-slate-900 p-4 font-semibold"
+            >
+              Jawa Barat
+            </td>
+            <td
+              class="w-1/2 border border-slate-200 text-slate-900 p-4 font-semibold"
+            >
+              Bandung
+            </td>
+          </tr>
+          <tr class="text-center">
+            <td
+              class="w-1/2 border border-slate-200 text-slate-900 p-4 font-semibold"
+            >
+              DKI Jakarta
+            </td>
+            <td
+              class="w-1/2 border border-slate-200 text-slate-900 p-4 font-semibold"
+            >
+              Jakarta
+            </td>
+          </tr>
+          <tr class="text-center">
+            <td
+              class="w-1/2 border border-slate-200 text-slate-900 p-4 font-semibold"
+            >
+              Sumatera Selatan
+            </td>
+            <td
+              class="w-1/2 border border-slate-200 text-slate-900 p-4 font-semibold"
+            >
+              Palembang
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Arbitrary variant -->
+    <!-- & : elemen ini -->
+    <!-- > : lalu -->
+    <!-- * : semua elemen didalamnya -->
+    <!-- ngasih utility dari element parent nya langsung dengan menimpa style daripada utility yang sebelumnya sudah didefinisikan di tiap tiap elemen child nya -->
+    <!-- biarkan tailwind memasak 🔥 -->
+    <ul
+      class="w-2/3 m-auto mb-[500px] [&>*]:bg-pink-300 [&>*]:text-pink-700 [&>li:first-child]:bg-indigo-300 [&>li:first-child]:text-indigo-700 [&>li:last-child]:bg-yellow-100 [&>li:last-child]:text-yellow-600 [&>li:nth-child(4)]:bg-cyan-200 [&>li:nth-child(4)]:text-cyan-700 [&>li:nth-child(3)>div>span:nth-child(2)]:bg-emerald-600 [&>li:nth-child(3):hover>div>span:nth-child(2)]:rounded-full [&>li:nth-child(3):hover>div>span:nth-child(2)]:bg-purple-600"
+    >
+      <li
+        class="bg-emerald-300 rounded-lg py-3 px-4 mb-2 text-base text-emerald-700 text-center"
+      >
+        list 1
+      </li>
+      <li
+        class="bg-emerald-300 rounded-lg py-3 px-4 mb-2 text-base text-emerald-700 text-center"
+      >
+        list 2
+      </li>
+      <li
+        class="bg-emerald-300 rounded-lg py-3 px-4 mb-2 text-base text-emerald-700 text-center"
+      >
+        <div class="flex items-center justify-center gap-4">
+          <span class="w-10 h-10 bg-royal"></span>
+          <span class="w-10 h-10 bg-royal"></span>
+          <span class="w-10 h-10 bg-royal"></span>
+        </div>
+      </li>
+      <li
+        class="bg-emerald-300 rounded-lg py-3 px-4 mb-2 text-base text-emerald-700 text-center"
+      >
+        list 4
+      </li>
+      <li
+        class="bg-emerald-300 rounded-lg py-3 px-4 mb-2 text-base text-emerald-700 text-center"
+      >
+        list 5
+      </li>
+      <li
+        class="bg-emerald-300 rounded-lg py-3 px-4 mb-2 text-base text-emerald-700 text-center"
+      >
+        list 6
+      </li>
+    </ul>
   </body>
 </html>
